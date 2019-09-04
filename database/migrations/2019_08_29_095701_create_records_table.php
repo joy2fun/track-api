@@ -15,14 +15,14 @@ class CreateRecordsTable extends Migration
     {
         Schema::create('records', function (Blueprint $table) {
             $table->increments('id');
-            $table->tinyInteger('cs');
-            $table->tinyInteger('esl');
-            $table->tinyInteger('care');
-            $table->tinyInteger('contact');
-            $table->tinyInteger('compose');
-            $table->tinyInteger('complain');
-            $table->tinyInteger('compliment');
-            $table->string('notes');
+            $table->tinyInteger('esl')->default(0);
+            $table->tinyInteger('care')->default(0);
+            $table->tinyInteger('contact')->default(0);
+            $table->tinyInteger('compose')->default(0);
+            $table->tinyInteger('computer')->default(0);
+            $table->tinyInteger('compliment')->default(0);
+            $table->tinyInteger('communication')->default(0);
+            $table->string('notes', 4096);
             $table->timestamps();
         });
     }
